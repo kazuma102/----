@@ -28,9 +28,6 @@ instance/
 # Pytest cache
 .cache/
 
-# Database
-*.db
-
 # VS Code files
 .vscode/
 
