@@ -13,19 +13,21 @@ def get_db_connection():
 def create_db_table():
     con = get_db_connection()
     
-    create_players_query = ('''CREATE TABLE IF NOT EXISTS players (
-                                player_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                player_name TEXT NOT NULL,
-                                created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    create_players_query = ('''
+                            CREATE TABLE IF NOT EXISTS players (
+                            player_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            player_name TEXT NOT NULL,
+                            created_at TEXT NOT NULL DEFAULT (datetime('now'))
                             );
                             ''')
     
-    create_scores_query = ('''CREATE TABLE IF NOT EXISTS scores (
-                                score_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                score INTEGER NOT NULL DEFAULT 0,
-                                player_id INTEGER NOT NULL,
-                                created_at TEXT NOT NULL DEFAULT (datetime('now')),
-                                FOREIGN KEY (player_id) REFERENCES players(player_id)
+    create_scores_query = ('''
+                            CREATE TABLE IF NOT EXISTS scores (
+                            score_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            score INTEGER NOT NULL DEFAULT 0,
+                            player_id INTEGER NOT NULL,
+                            created_at TEXT NOT NULL DEFAULT (datetime('now')),
+                            FOREIGN KEY (player_id) REFERENCES players(player_id)
                             );
                             ''')
     
@@ -67,7 +69,6 @@ def get_player_id(player_name_data):
         player_id = next_player['player_id']
     
     con.close()
-    
     return player_id
 
 def add_score(score_data, player_name_data):
@@ -89,6 +90,7 @@ def add_data(score_data, player_name_data):
     
     score = score_data
     player_name = get_player_id(player_name_data)
+    # print(f'score : {score}, player_name : {player_name}')
 
 def display_list():
     con = get_db_connection()
