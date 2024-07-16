@@ -1,3 +1,5 @@
+#サーバー起動用ファイル
+
 from ScoreApp import app
 
 if __name__ == '__main__':

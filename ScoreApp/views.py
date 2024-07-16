@@ -1,3 +1,5 @@
+#ルーティング用ファイル
+
 from flask import Flask,request,jsonify
 from ScoreApp import app
 from ScoreApp import db

@@ -1,3 +1,4 @@
+# 初期起動ファイル
 from flask import Flask
 
 app = Flask(__name__)

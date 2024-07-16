@@ -1,3 +1,5 @@
+# データベース操作用ファイル
+
 import sqlite3
 from flask import jsonify
 
