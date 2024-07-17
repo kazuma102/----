@@ -3,17 +3,18 @@
 ## サーバーに関して
 
 ### ローカルでの起動手順
-・コマンドにて、server.pyを起動する  
-    -> python server.py
+・コマンドにて、server.pyを起動する
+
+    python server.py
 ・POST、GETリクエストの内容はターミナルで確認
 
 ### Dockerを使った起動
 ・tarファイルからイメージを取り込む
 
-    -> docker load -i netpro-score-app 
+    docker load -i netpro-score-app 
 ・イメージを実行する(今回は8080ポート)
 
-    -> docker run -p 8080:8080 netpro-score-app
+    docker run -p 8080:8080 netpro-score-app
 
 ### Renderへのアクセスをする場合
 ・そのままゲームを起動して大丈夫  
